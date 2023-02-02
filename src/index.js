@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ThemeProvider, createTheme } from '@mui/material';
 
 import './index.css';
 import App from './components/App';
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#cd7f32',
+    },
+    secondary: {
+      main: '#ff0000',
+    },
+  },
+});
+
 ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
